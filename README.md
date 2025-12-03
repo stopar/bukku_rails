@@ -103,18 +103,20 @@ Just like in Rails the methods follow the singular and plural expression. Method
 
 ### Examples
 
-For Staging
+To use the gem you will need to initialize a client first. Either choose a Bukku's Staging or Production server to test your app.
+
+For Staging at https://api.bukku.fyi
+
 ```ruby
-# Initialize the client
 client = BukkuTest.new(
   token: "your_bukku_api_token",
   domain: "your_company_subdomain"
 )
 ```
 
-For Production
+For Production at https://api.bukku.my
+
 ```ruby
-# Initialize the client
 client = Bukku.new(
   token: "your_bukku_api_token",
   domain: "your_company_subdomain"
