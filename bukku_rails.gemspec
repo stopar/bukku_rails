@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['Muzaffar Ariff']
   spec.email = ['muz@geligalabs.com']
 
-  spec.summary = 'Bukku API implementation in Rails'
+  spec.summary = 'Bukku Cloud accounting API implementation in Rails'
   spec.description = 'Use Rails conventions to call Bukku API requests.'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.0.0'

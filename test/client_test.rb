@@ -52,7 +52,7 @@ class ClientTest < Minitest::Test
     @client.send(:post, "/comment", body: {foo: {bar: :baz}})
   end
 
-  def test_500 
+  def test_500
     stub_request(:get, "https://rekon.org/").with(headers: {
       'Authorization' => 'Bearer abc123',
       'Company-Subdomain' => 'test',
