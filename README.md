@@ -18,28 +18,10 @@ You will need 2 things - your **subdomain** and **API Token**.
 
 You can get these after you login into your Bukku account, Control Panel -> Integrations -> Turn ON API Access. 
 
-Note: Bukku offers 2 type of access - Staging and Production. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be great to test your Rails app if it is extracting the correct data from Bukku. Once you are satisfied you can then use access the Production server where your actual data lives. 
+Note: Bukku offers 2 type of access - Staging and Production. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be a great way to test your Rails app to see if it is extracting the correct data from Bukku's staging server (exactly the same app but at their staging server). Once you are satisfied you can then use access the Production server where your actual data lives. 
 
-**Bukku Rails** provides usage for both access. For Staging use the `BukkuTest` class and actual production simply use `Bukku` class. Then you can use any of the methods listed in the table below: 
+**Bukku Rails** provides usage for both access. For Staging use the `BukkuTest` class and actual Production simply use `Bukku` class. Then you can use any of the methods listed in the table below: 
 
-### Setup
-For Staging
-```ruby
-# Initialize the client
-client = BukkuTest.new(
-  token: "your_bukku_api_token",
-  domain: "your_company_subdomain"
-)
-```
-
-For Production
-```ruby
-# Initialize the client
-client = Bukku.new(
-  token: "your_bukku_api_token",
-  domain: "your_company_subdomain"
-)
-```
 
 ### Available Methods
 
@@ -120,6 +102,24 @@ Just like in Rails the methods follow the singular and plural expression. Method
 | GET | `account(id)` | `/accounts/:id` |
 
 ### Examples
+
+For Staging
+```ruby
+# Initialize the client
+client = BukkuTest.new(
+  token: "your_bukku_api_token",
+  domain: "your_company_subdomain"
+)
+```
+
+For Production
+```ruby
+# Initialize the client
+client = Bukku.new(
+  token: "your_bukku_api_token",
+  domain: "your_company_subdomain"
+)
+```
 
 **Fetch all invoices:**
 ```ruby
