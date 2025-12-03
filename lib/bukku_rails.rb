@@ -1,8 +1,9 @@
-# frozen_string_literal: true
+require_relative 'bukku_rails/version'
 
-require_relative "bukku_rails/version"
+require 'net/http'
+require 'uri'
+require 'json'
 
-module BukkuRails
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require 'client'
+require 'bukku'
+require 'bukku_test'
