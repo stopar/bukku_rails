@@ -8,9 +8,19 @@ Take a look at [Bukku's API](https://developers.bukku.my) to know what data you 
 
 ## Installation
 
-Add the gen into your Gemfile like so:
+### Rails
+
+Add the gem into your Gemfile like so:
 
 `gem "bukku_rails"`
+
+### Ruby
+
+1. Install the gem `gem install bukku_rails`
+
+2. Test the gem standalone `irb -r bukku_rails`
+
+3. If your satisfied with the gem usage you can include the gem in your `Gemfile` of your app.
 
 ## Usage
 
@@ -18,9 +28,17 @@ You will need 2 things - your **subdomain** and **API Token**.
 
 You can get these after you login into your Bukku account, Control Panel -> Integrations -> Turn ON API Access.
 
-Note: Bukku offers 2 type of access - Staging and Production. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be a great way to test your Rails app to see if it is extracting the correct data from Bukku's staging server (exactly the same app but at their staging server). Once you are satisfied you can then use access the Production server where your actual data lives.
+Note: Bukku offers 2 type of access:
 
-**Bukku Rails** provides usage for both access. For Staging use the `BukkuTest` class and actual Production simply use `Bukku` class. Then you can use any of the methods listed in the table below:
+1. *Staging* - For testing your app. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be a great way to test your Rails app to see if it is extracting the correct data from Bukku's staging server (exactly the same app).
+
+2. *Production* - Your actual Bukku data, where all your data lives.
+
+**Bukku Rails** provides usage for both access, under 2 different classes:
+
+1. *Staging* use the `BukkuTest` class, like so `client = BukkuTest.new(domain: "sub-domain", token: "token-from-bukku-fyi")`
+
+2. *Production* use `Bukku` class, like so `client = Bukku.new(domain: "sub-domain", token: "token-from-bukku-my")`
 
 ### Available Methods
 
@@ -30,74 +48,74 @@ Just like in Rails the methods follow the singular and plural expression. Method
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_sales_quotes(**kwargs)` | `/sales/quotes` |
+| GET | `get_sales_quotes(query-parameters)` | `/sales/quotes` |
 | GET | `get_sales_quote(id)` | `/sales/quotes/:id` |
-| GET | `get_sales_orders(**kwargs)` | `/sales/orders` |
+| GET | `get_sales_orders(query-parameters)` | `/sales/orders` |
 | GET | `get_sales_order(id)` | `/sales/orders/:id` |
-| GET | `get_delivery_orders(**kwargs)` | `/sales/delivery_orders` |
+| GET | `get_delivery_orders(query-parameters)` | `/sales/delivery_orders` |
 | GET | `get_delivery_order(id)` | `/sales/delivery_orders/:id` |
-| GET | `get_invoices(**kwargs)` | `/sales/invoices` |
+| GET | `get_invoices(query-parameters)` | `/sales/invoices` |
 | GET | `get_invoice(id)` | `/sales/invoices/:id` |
-| GET | `get_sales_credit_notes(**kwargs)` | `/sales/credit_notes` |
+| GET | `get_sales_credit_notes(query-parameters)` | `/sales/credit_notes` |
 | GET | `get_sales_credit_note(id)` | `/sales/credit_notes/:id` |
-| GET | `get_sales_payments(**kwargs)` | `/sales/payments` |
+| GET | `get_sales_payments(query-parameters)` | `/sales/payments` |
 | GET | `get_sales_payment(id)` | `/sales/payments/:id` |
-| GET | `get_sales_refunds(**kwargs)` | `/sales/refunds` |
+| GET | `get_sales_refunds(query-parameters)` | `/sales/refunds` |
 | GET | `get_sales_refund(id)` | `/sales/refunds/:id` |
 
 #### Purchases
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_purchase_orders(**kwargs)` | `/purchases/orders` |
+| GET | `get_purchase_orders(query-parameters)` | `/purchases/orders` |
 | GET | `get_purchase_order(id)` | `/purchases/orders/:id` |
-| GET | `get_received_notes(**kwargs)` | `/purchases/goods_received_notes` |
+| GET | `get_received_notes(query-parameters)` | `/purchases/goods_received_notes` |
 | GET | `get_received_note(id)` | `/purchases/goods_received_notes/:id` |
-| GET | `get_bills(**kwargs)` | `/purchases/bills` |
+| GET | `get_bills(query-parameters)` | `/purchases/bills` |
 | GET | `get_bill(id)` | `/purchases/bills/:id` |
-| GET | `get_purchases_credit_notes(**kwargs)` | `/purchases/credit_notes` |
+| GET | `get_purchases_credit_notes(query-parameters)` | `/purchases/credit_notes` |
 | GET | `get_purchases_credit_note(id)` | `/purchases/credit_notes/:id` |
-| GET | `get_purchases_payments(**kwargs)` | `/purchases/payments` |
+| GET | `get_purchases_payments(query-parameters)` | `/purchases/payments` |
 | GET | `get_purchases_payments(id)` | `/purchases/payments/:id` |
-| GET | `get_purchases_refunds(**kwargs)` | `/purchases/refunds` |
+| GET | `get_purchases_refunds(query-parameters)` | `/purchases/refunds` |
 | GET | `get_purchases_refund(id)` | `/purchases/refunds/:id` |
 
 #### Banking
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_banking_incomes(**kwargs)` | `/banking/incomes` |
+| GET | `get_banking_incomes(query-parameters)` | `/banking/incomes` |
 | GET | `get_banking_income(id)` | `/banking/incomes/:id` |
-| GET | `get_banking_expenses(**kwargs)` | `/banking/expenses` |
+| GET | `get_banking_expenses(query-parameters)` | `/banking/expenses` |
 | GET | `get_banking_expense(id)` | `/banking/expenses/:id` |
-| GET | `get_transfers(**kwargs)` | `/banking/transfers` |
+| GET | `get_transfers(query-parameters)` | `/banking/transfers` |
 | GET | `get_transfer(id)` | `/banking/transfers/:id` |
 
 #### Contacts
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_contacts(**kwargs)` | `/contacts` |
+| GET | `get_contacts(query-parameters)` | `/contacts` |
 | GET | `get_contact(id)` | `/contacts/:id` |
-| GET | `get_contact_groups(**kwargs)` | `/contacts/groups` |
+| GET | `get_contact_groups(query-parameters)` | `/contacts/groups` |
 | GET | `get_contact_group(id)` | `/contacts/groups/:id` |
 
 #### Products
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_products(**kwargs)` | `/products` |
+| GET | `get_products(query-parameters)` | `/products` |
 | GET | `get_product(id)` | `/products/:id` |
-| GET | `get_product_groups(**kwargs)` | `/products/groups` |
+| GET | `get_product_groups(query-parameters)` | `/products/groups` |
 | GET | `get_product_group(id)` | `/products/groups/:id` |
 
 #### Accounting
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `get_journal_entries(**kwargs)` | `/journal_entries` |
+| GET | `get_journal_entries(query-parameters)` | `/journal_entries` |
 | GET | `get_journal_entry(id)` | `/journal_entries/:id` |
-| GET | `get_accounts(**kwargs)` | `/accounts` |
+| GET | `get_accounts(query-parameters)` | `/accounts` |
 | GET | `get_account(id)` | `/accounts/:id` |
 
 ### Examples
