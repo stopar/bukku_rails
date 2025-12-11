@@ -1,10 +1,10 @@
 # BukkuRails
 
-Use Rails methods to interact with your data in [Bukku](https://bukku.my/) accounting software. 
+Use Rails methods to interact with your data in [Bukku](https://bukku.my/) accounting software.
 
-Take a look at [Bukku's API](https://developers.bukku.my) to know what data you can extract from Bukku. 
+Take a look at [Bukku's API](https://developers.bukku.my) to know what data you can extract from Bukku.
 
-> As of December 2, 2025, the gem only handles **GET** request. If you require other request, fork the gem and write it and then send us a Pull Request. 
+> As of December 2, 2025, the gem only handles **GET** request. If you require other request, fork the gem and write it and then send us a Pull Request.
 
 ## Installation
 
@@ -14,18 +14,17 @@ Add the gen into your Gemfile like so:
 
 ## Usage
 
-You will need 2 things - your **subdomain** and **API Token**. 
+You will need 2 things - your **subdomain** and **API Token**.
 
-You can get these after you login into your Bukku account, Control Panel -> Integrations -> Turn ON API Access. 
+You can get these after you login into your Bukku account, Control Panel -> Integrations -> Turn ON API Access.
 
-Note: Bukku offers 2 type of access - Staging and Production. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be a great way to test your Rails app to see if it is extracting the correct data from Bukku's staging server (exactly the same app but at their staging server). Once you are satisfied you can then use access the Production server where your actual data lives. 
+Note: Bukku offers 2 type of access - Staging and Production. You can [email Bukku](mailto:dev@bukku.my) for a Staging account which will be a great way to test your Rails app to see if it is extracting the correct data from Bukku's staging server (exactly the same app but at their staging server). Once you are satisfied you can then use access the Production server where your actual data lives.
 
-**Bukku Rails** provides usage for both access. For Staging use the `BukkuTest` class and actual Production simply use `Bukku` class. Then you can use any of the methods listed in the table below: 
-
+**Bukku Rails** provides usage for both access. For Staging use the `BukkuTest` class and actual Production simply use `Bukku` class. Then you can use any of the methods listed in the table below:
 
 ### Available Methods
 
-Just like in Rails the methods follow the singular and plural expression. Methods with arguments are normally plural, while methods without arguments are singular methods calls. 
+Just like in Rails the methods follow the singular and plural expression. Methods with arguments are normally plural, while methods without arguments are singular methods calls.
 
 #### Sales
 
@@ -96,16 +95,16 @@ Just like in Rails the methods follow the singular and plural expression. Method
 
 | HTTP Method | Ruby Method | Endpoint |
 |------------|-------------|----------|
-| GET | `journal_entries(**kwargs)` | `/journal_entries` |
-| GET | `journal_entry(id)` | `/journal_entries/:id` |
-| GET | `accounts` | `/accounts` |
-| GET | `account(id)` | `/accounts/:id` |
+| GET | `get_journal_entries(**kwargs)` | `/journal_entries` |
+| GET | `get_journal_entry(id)` | `/journal_entries/:id` |
+| GET | `get_accounts` | `/accounts` |
+| GET | `get_account(id)` | `/accounts/:id` |
 
 ### Examples
 
 To use the gem you will need to initialize a client first. Either choose a Bukku's Staging or Production server to test your app.
 
-For Staging at https://api.bukku.fyi
+For Staging at <https://api.bukku.fyi>
 
 ```ruby
 client = BukkuTest.new(
@@ -114,7 +113,7 @@ client = BukkuTest.new(
 )
 ```
 
-For Production at https://api.bukku.my
+For Production at <https://api.bukku.my>
 
 ```ruby
 client = Bukku.new(
@@ -124,21 +123,23 @@ client = Bukku.new(
 ```
 
 **Fetch all invoices:**
+
 ```ruby
 invoices = client.get_invoices
 ```
 
 **Fetch invoices with date filters or parameters:**
 To know more on what Query Parameters is acceptable head to [Bukku API page](https://developers.bukku.my)
+
 ```ruby
 invoices = client.get_invoices(date_from: "2025-11-01", date_to: "2025-11-30")
 ```
 
 **Fetch a specific invoice:**
+
 ```ruby
 invoice = client.get_invoice(123)
 ```
-
 
 ## Contributing
 
