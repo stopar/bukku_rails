@@ -10,7 +10,7 @@ Take a look at [Bukku's API](https://developers.bukku.my) to know what data you 
 
 Add the gen into your Gemfile like so:
 
-`gem "bukku_rails`
+`gem "bukku_rails"`
 
 ## Usage
 
