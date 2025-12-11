@@ -97,7 +97,7 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_journal_entries(**kwargs)` | `/journal_entries` |
 | GET | `get_journal_entry(id)` | `/journal_entries/:id` |
-| GET | `get_accounts` | `/accounts` |
+| GET | `get_accounts(**kwargs)` | `/accounts` |
 | GET | `get_account(id)` | `/accounts/:id` |
 
 ### Examples

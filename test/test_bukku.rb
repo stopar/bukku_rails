@@ -482,14 +482,14 @@ class TestBukku < Minitest::Test
   end
 
   def test_accounts
-    stub_request(:get, 'https://api.bukku.my/accounts').with(
+    stub_request(:get, 'https://api.bukku.my/accounts?type=expenses').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
         'Accept' => 'application/json'
       }
     )
-    @bukku.get_accounts
+    @bukku.get_accounts(type: 'expenses')
   end
 
   def test_account

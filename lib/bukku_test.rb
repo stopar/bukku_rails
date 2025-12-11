@@ -193,20 +193,20 @@ class BukkuTest < Client
 
   ## ACCOUNTING
   # Journal Entries
-  def journal_entries(**kwargs)
+  def get_journal_entries(**kwargs)
     get '/journal_entries', query: kwargs
   end
 
-  def journal_entry(id)
+  def get_journal_entry(id)
     get "/journal_entries/#{id}"
   end
 
   # Account
-  def accounts
-    get '/accounts'
+  def get_accounts(**kwargs)
+    get '/accounts', query: kwargs
   end
 
-  def account(id)
+  def get_account(id)
     get "/accounts/#{id}"
   end
 end

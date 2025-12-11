@@ -202,8 +202,8 @@ class Bukku < Client
   end
 
   # Account
-  def get_accounts
-    get '/accounts'
+  def get_accounts(**kwargs)
+    get '/accounts', query: kwargs
   end
 
   def get_account(id)
