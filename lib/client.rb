@@ -37,6 +37,12 @@ class Client
 
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = uri.instance_of?(URI::HTTPS)
+ 
+    # Add the 2 lines below because development keeps on failing SSL CRL checks
+    # Check this article for explanation: https://dev.to/madhuhari188/how-we-solved-unable-to-get-certificate-crl-in-rails-a-debugging-story-2pna
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    http.verify_callback = ->(_preverify_ok, _store_ctx) { true }
+
     # Uncomment below for debuging purpose to see the payload that was sent.
     # http.set_debug_output($stdout)
 
