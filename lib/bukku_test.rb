@@ -16,6 +16,10 @@ class BukkuTest < Client
     get "/sales/quotes/#{id}"
   end
 
+  def create_quote(body:)
+    post '/sales/quotes', body: body
+  end
+
   # Sales Order
   def get_sales_orders(**kwargs)
     get '/sales/orders', query: kwargs
@@ -23,6 +27,10 @@ class BukkuTest < Client
 
   def get_sales_order(id)
     get "/sales/orders/#{id}"
+  end
+
+  def create_sales_order(body:)
+    post '/sales/orders', body: body
   end
 
   # Delivery Order
@@ -34,6 +42,10 @@ class BukkuTest < Client
     get "/sales/delivery_orders/#{id}"
   end
 
+  def create_delivery_order(body:)
+    post '/sales/delivery_orders', body: body
+  end
+
   # Invoice
   def get_invoices(**kwargs)
     get '/sales/invoices', query: kwargs
@@ -41,6 +53,10 @@ class BukkuTest < Client
 
   def get_invoice(id)
     get "/sales/invoices/#{id}"
+  end
+
+  def create_invoice(body:)
+    post '/sales/invoices', body: body
   end
 
   # Credit Note
@@ -52,6 +68,10 @@ class BukkuTest < Client
     get "/sales/credit_notes/#{id}"
   end
 
+  def create_credit_note(body:)
+    post '/sales/credit_notes', body: body
+  end
+
   # Payment
   def get_sales_payments(**kwargs)
     get '/sales/payments', query: kwargs
@@ -61,13 +81,21 @@ class BukkuTest < Client
     get "/sales/payments/#{id}"
   end
 
-  # Redund
+  def create_payment(body:)
+    post '/sales/payments', body: body
+  end
+
+  # Refund
   def get_sales_refunds(**kwargs)
     get '/sales/refunds', query: kwargs
   end
 
   def get_sales_refund(id)
     get "/sales/refunds/#{id}"
+  end
+
+  def create_refund(body:)
+    post '/sales/refunds', body: body
   end
 
   ## PURCHASE
@@ -80,6 +108,10 @@ class BukkuTest < Client
     get "/purchases/orders/#{id}"
   end
 
+  def create_purchase_order(body:)
+    post '/purchases/orders', body: body
+  end
+
   ## Goods Received Note
   def get_received_notes(**kwargs)
     get '/purchases/goods_received_notes', query: kwargs
@@ -87,6 +119,10 @@ class BukkuTest < Client
 
   def get_received_note(id)
     get "/purchases/goods_received_notes/#{id}"
+  end
+
+  def create_received_note(body:)
+    post '/purchases/goods_received_notes', body: body
   end
 
   # Bill
@@ -98,6 +134,10 @@ class BukkuTest < Client
     get "/purchases/bills/#{id}"
   end
 
+  def create_bill(body:)
+    post '/purchases/bills', body: body
+  end
+
   # Credit Note
   def get_purchases_credit_notes(**kwargs)
     get '/purchases/credit_notes', query: kwargs
@@ -105,6 +145,10 @@ class BukkuTest < Client
 
   def get_purchases_credit_note(id)
     get "/purchases/credit_notes/#{id}"
+  end
+
+  def create_purchase_credit_note(body:)
+    post '/purchases/credit_note', body: body
   end
 
   # Payment
@@ -116,6 +160,10 @@ class BukkuTest < Client
     get "/purchases/payments/#{id}"
   end
 
+  def create_purchases_payment(body:)
+    post '/purchases/payments', body: body
+  end
+
   # Refund
   def get_purchases_refunds(**kwargs)
     get '/purchases/refunds', query: kwargs
@@ -123,6 +171,10 @@ class BukkuTest < Client
 
   def get_purchases_refund(id)
     get "/purchases/refunds/#{id}"
+  end
+
+  def create_purchases_refund(body:)
+    post '/purchases/refunds', body: body
   end
 
   ## BANK
@@ -135,6 +187,10 @@ class BukkuTest < Client
     get "/banking/incomes/#{id}"
   end
 
+  def create_banking_income(body:)
+    post '/banking/incomes', body: body
+  end
+
   # Money Out
   def get_banking_expenses(**kwargs)
     get '/banking/expenses', query: kwargs
@@ -144,6 +200,10 @@ class BukkuTest < Client
     get "/banking/expenses/#{id}"
   end
 
+  def create_expense(body:)
+    post '/banking/expenses', body: body
+  end
+
   # Transfers
   def get_transfers(**kwargs)
     get '/banking/transfers', query: kwargs
@@ -151,6 +211,10 @@ class BukkuTest < Client
 
   def get_transfer(id)
     get "/banking/transfers/#{id}"
+  end
+
+  def create_transfer(body:)
+    post '/banking/transfer', body: body
   end
 
   ## CONTACT
@@ -163,6 +227,10 @@ class BukkuTest < Client
     get "/contacts/#{id}"
   end
 
+  def create_contact(body:)
+    post '/contacts', body: body
+  end
+
   # Groups
   def get_contact_groups(**kwargs)
     get '/contacts/groups', query: kwargs
@@ -170,6 +238,10 @@ class BukkuTest < Client
 
   def get_contact_group(id)
     get "/contacts/groups/#{id}"
+  end
+
+  def create_group(body:)
+    post '/contacts/groups', body: body
   end
 
   ## PRODUCT
@@ -182,6 +254,19 @@ class BukkuTest < Client
     get "/products/#{id}"
   end
 
+  def create_product(body:)
+    post '/products', body: body
+  end
+
+  # Bundles
+  def get_bundle(id)
+    get "/products/bundles/#{id}"
+  end
+
+  def create_bundle(body:)
+    post '/products/bundles', body: body
+  end
+
   # Groups
   def get_product_groups(**kwargs)
     get '/products/groups', query: kwargs
@@ -189,6 +274,10 @@ class BukkuTest < Client
 
   def get_product_group(id)
     get "/products/groups/#{id}"
+  end
+
+  def create_product_group(body:)
+    post '/products/groups', body: body
   end
 
   ## ACCOUNTING
@@ -201,6 +290,10 @@ class BukkuTest < Client
     get "/journal_entries/#{id}"
   end
 
+  def create_journal_entry(body:)
+    post '/journal_entries', body: body
+  end
+
   # Account
   def get_accounts(**kwargs)
     get '/accounts', query: kwargs
@@ -208,5 +301,14 @@ class BukkuTest < Client
 
   def get_account(id)
     get "/accounts/#{id}"
+  end
+
+  def create_account(body:)
+    post '/accounts', body: body
+  end
+
+  # Files
+  def upload_file(file_data:, filename:, mime_type:)
+    upload '/files', file_data: file_data, filename: filename, mime_type: mime_type
   end
 end

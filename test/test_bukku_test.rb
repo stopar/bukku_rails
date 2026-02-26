@@ -458,6 +458,274 @@ class TestBukkuTest < Minitest::Test
     @bukku_test.get_product_group(707)
   end
 
+  ## SALES CREATE TESTS
+  def test_create_quote
+    stub_request(:post, 'https://api.bukku.fyi/sales/quotes').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_quote(body: { name: 'test' })
+  end
+
+  def test_create_sales_order
+    stub_request(:post, 'https://api.bukku.fyi/sales/orders').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_sales_order(body: { name: 'test' })
+  end
+
+  def test_create_delivery_order
+    stub_request(:post, 'https://api.bukku.fyi/sales/delivery_orders').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_delivery_order(body: { name: 'test' })
+  end
+
+  def test_create_invoice
+    stub_request(:post, 'https://api.bukku.fyi/sales/invoices').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_invoice(body: { name: 'test' })
+  end
+
+  def test_create_credit_note
+    stub_request(:post, 'https://api.bukku.fyi/sales/credit_notes').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_credit_note(body: { name: 'test' })
+  end
+
+  def test_create_payment
+    stub_request(:post, 'https://api.bukku.fyi/sales/payments').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_payment(body: { name: 'test' })
+  end
+
+  def test_create_refund
+    stub_request(:post, 'https://api.bukku.fyi/sales/refunds').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_refund(body: { name: 'test' })
+  end
+
+  ## PURCHASE CREATE TESTS
+  def test_create_purchase_order
+    stub_request(:post, 'https://api.bukku.fyi/purchases/orders').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_purchase_order(body: { name: 'test' })
+  end
+
+  def test_create_received_note
+    stub_request(:post, 'https://api.bukku.fyi/purchases/goods_received_notes').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_received_note(body: { name: 'test' })
+  end
+
+  def test_create_bill
+    stub_request(:post, 'https://api.bukku.fyi/purchases/bills').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_bill(body: { name: 'test' })
+  end
+
+  def test_create_purchase_credit_note
+    stub_request(:post, 'https://api.bukku.fyi/purchases/credit_note').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_purchase_credit_note(body: { name: 'test' })
+  end
+
+  def test_create_purchases_payment
+    stub_request(:post, 'https://api.bukku.fyi/purchases/payments').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_purchases_payment(body: { name: 'test' })
+  end
+
+  def test_create_purchases_refund
+    stub_request(:post, 'https://api.bukku.fyi/purchases/refunds').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_purchases_refund(body: { name: 'test' })
+  end
+
+  ## BANKING CREATE TESTS
+  def test_create_banking_income
+    stub_request(:post, 'https://api.bukku.fyi/banking/incomes').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_banking_income(body: { name: 'test' })
+  end
+
+  def test_create_expense
+    stub_request(:post, 'https://api.bukku.fyi/banking/expenses').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_expense(body: { name: 'test' })
+  end
+
+  def test_create_transfer
+    stub_request(:post, 'https://api.bukku.fyi/banking/transfer').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_transfer(body: { name: 'test' })
+  end
+
+  ## CONTACT CREATE TESTS
+  def test_create_contact
+    stub_request(:post, 'https://api.bukku.fyi/contacts').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_contact(body: { name: 'test' })
+  end
+
+  def test_create_group
+    stub_request(:post, 'https://api.bukku.fyi/contacts/groups').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_group(body: { name: 'test' })
+  end
+
+  ## PRODUCT CREATE TESTS
+  def test_get_bundle
+    stub_request(:get, 'https://api.bukku.fyi/products/bundles/808').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      }
+    )
+    @bukku_test.get_bundle(808)
+  end
+
+  def test_create_product
+    stub_request(:post, 'https://api.bukku.fyi/products').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_product(body: { name: 'test' })
+  end
+
+  def test_create_bundle
+    stub_request(:post, 'https://api.bukku.fyi/products/bundles').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_bundle(body: { name: 'test' })
+  end
+
+  def test_create_product_group
+    stub_request(:post, 'https://api.bukku.fyi/products/groups').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_product_group(body: { name: 'test' })
+  end
+
   ## ACCOUNTING TESTS
   def test_journal_entries
     stub_request(:get, 'https://api.bukku.fyi/journal_entries?date_from=2025-01-01').with(
@@ -501,5 +769,41 @@ class TestBukkuTest < Minitest::Test
       }
     )
     @bukku_test.get_account(909)
+  end
+
+  def test_create_journal_entry
+    stub_request(:post, 'https://api.bukku.fyi/journal_entries').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_journal_entry(body: { name: 'test' })
+  end
+
+  def test_create_account
+    stub_request(:post, 'https://api.bukku.fyi/accounts').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"test"}'
+    )
+    @bukku_test.create_account(body: { name: 'test' })
+  end
+
+  ## FILE TESTS
+  def test_upload_file
+    stub_request(:post, 'https://api.bukku.fyi/files').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      }
+    )
+    @bukku_test.upload_file(file_data: 'test content', filename: 'invoice.pdf', mime_type: 'application/pdf')
   end
 end

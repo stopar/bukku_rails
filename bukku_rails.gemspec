@@ -6,12 +6,12 @@ Gem::Specification.new do |spec|
   spec.authors = ['Muzaffar Ariff']
   spec.email = ['muz@geligalabs.com']
 
-  spec.summary = 'Bukku Cloud accounting API implementation in Rails'
+  spec.summary = 'Bukku Cloud accounting API implementation in Ruby and usage mostly for Rails apps'
   spec.description = 'Use Rails conventions to call Bukku API requests.'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 3.0.0'
 
-  spec.metadata['source_code_uri'] = "https://github.com/stopar/bukku_rails"
+  spec.metadata['source_code_uri'] = 'https://github.com/stopar/bukku_rails'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
