@@ -36,13 +36,15 @@ Note: Bukku offers 2 type of access:
 
 **Bukku Rails** provides usage for both access, under 2 different classes:
 
-1. *Staging* use the `BukkuTest` class, like so `client = BukkuTest.new(domain: "sub-domain", token: "token-from-bukku-fyi")`
+1. *Staging* use the `BukkuTest` class, like so
+`client = BukkuTest.new(domain: "sub-domain", token: "api-token-from-bukku-fyi")`
 
-2. *Production* use `Bukku` class, like so `client = Bukku.new(domain: "sub-domain", token: "token-from-bukku-my")`
+2. *Production* use `Bukku` class, like so
+`client = Bukku.new(domain: "sub-domain", token: "api-token-from-bukku-my")`
 
 ### Available Methods
 
-Just like in Rails the methods follow the singular and plural expression. Methods with arguments are normally plural, while methods without arguments are singular methods calls.
+Just like in Rails the methods follow the singular and plural expression. Methods that might return multiple records are plural expression methods. While methods that returns or create a single records are singular methods. So be careful where you put your ***s***'s 😁
 
 #### Sales
 
