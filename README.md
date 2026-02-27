@@ -4,7 +4,7 @@ Use Rails methods to interact with your data in [Bukku](https://bukku.my/) accou
 
 Take a look at [Bukku's API](https://developers.bukku.my) to know what data you can extract from Bukku.
 
-> As of December 2, 2025, the gem only handles **GET** request. If you require other request, fork the gem and write it and then send us a Pull Request.
+> As of February 2026, the gem handles **GET**, **POST**, and **file upload** requests.
 
 ## Installation
 
@@ -50,18 +50,25 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_sales_quotes(query-parameters)` | `/sales/quotes` |
 | GET | `get_sales_quote(id)` | `/sales/quotes/:id` |
+| POST | `create_quote(body:)` | `/sales/quotes` |
 | GET | `get_sales_orders(query-parameters)` | `/sales/orders` |
 | GET | `get_sales_order(id)` | `/sales/orders/:id` |
+| POST | `create_sales_order(body:)` | `/sales/orders` |
 | GET | `get_delivery_orders(query-parameters)` | `/sales/delivery_orders` |
 | GET | `get_delivery_order(id)` | `/sales/delivery_orders/:id` |
+| POST | `create_delivery_order(body:)` | `/sales/delivery_orders` |
 | GET | `get_invoices(query-parameters)` | `/sales/invoices` |
 | GET | `get_invoice(id)` | `/sales/invoices/:id` |
+| POST | `create_invoice(body:)` | `/sales/invoices` |
 | GET | `get_sales_credit_notes(query-parameters)` | `/sales/credit_notes` |
 | GET | `get_sales_credit_note(id)` | `/sales/credit_notes/:id` |
+| POST | `create_credit_note(body:)` | `/sales/credit_notes` |
 | GET | `get_sales_payments(query-parameters)` | `/sales/payments` |
 | GET | `get_sales_payment(id)` | `/sales/payments/:id` |
+| POST | `create_payment(body:)` | `/sales/payments` |
 | GET | `get_sales_refunds(query-parameters)` | `/sales/refunds` |
 | GET | `get_sales_refund(id)` | `/sales/refunds/:id` |
+| POST | `create_refund(body:)` | `/sales/refunds` |
 
 #### Purchases
 
@@ -69,16 +76,22 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_purchase_orders(query-parameters)` | `/purchases/orders` |
 | GET | `get_purchase_order(id)` | `/purchases/orders/:id` |
+| POST | `create_purchase_order(body:)` | `/purchases/orders` |
 | GET | `get_received_notes(query-parameters)` | `/purchases/goods_received_notes` |
 | GET | `get_received_note(id)` | `/purchases/goods_received_notes/:id` |
+| POST | `create_received_note(body:)` | `/purchases/goods_received_notes` |
 | GET | `get_bills(query-parameters)` | `/purchases/bills` |
 | GET | `get_bill(id)` | `/purchases/bills/:id` |
+| POST | `create_bill(body:)` | `/purchases/bills` |
 | GET | `get_purchases_credit_notes(query-parameters)` | `/purchases/credit_notes` |
 | GET | `get_purchases_credit_note(id)` | `/purchases/credit_notes/:id` |
+| POST | `create_purchase_credit_note(body:)` | `/purchases/credit_note` |
 | GET | `get_purchases_payments(query-parameters)` | `/purchases/payments` |
-| GET | `get_purchases_payments(id)` | `/purchases/payments/:id` |
+| GET | `get_purchases_payment(id)` | `/purchases/payments/:id` |
+| POST | `create_purchases_payment(body:)` | `/purchases/payments` |
 | GET | `get_purchases_refunds(query-parameters)` | `/purchases/refunds` |
 | GET | `get_purchases_refund(id)` | `/purchases/refunds/:id` |
+| POST | `create_purchases_refund(body:)` | `/purchases/refunds` |
 
 #### Banking
 
@@ -86,10 +99,13 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_banking_incomes(query-parameters)` | `/banking/incomes` |
 | GET | `get_banking_income(id)` | `/banking/incomes/:id` |
+| POST | `create_banking_income(body:)` | `/banking/incomes` |
 | GET | `get_banking_expenses(query-parameters)` | `/banking/expenses` |
 | GET | `get_banking_expense(id)` | `/banking/expenses/:id` |
+| POST | `create_expense(body:)` | `/banking/expenses` |
 | GET | `get_transfers(query-parameters)` | `/banking/transfers` |
 | GET | `get_transfer(id)` | `/banking/transfers/:id` |
+| POST | `create_transfer(body:)` | `/banking/transfer` |
 
 #### Contacts
 
@@ -97,8 +113,10 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_contacts(query-parameters)` | `/contacts` |
 | GET | `get_contact(id)` | `/contacts/:id` |
+| POST | `create_contact(body:)` | `/contacts` |
 | GET | `get_contact_groups(query-parameters)` | `/contacts/groups` |
 | GET | `get_contact_group(id)` | `/contacts/groups/:id` |
+| POST | `create_group(body:)` | `/contacts/groups` |
 
 #### Products
 
@@ -106,8 +124,12 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_products(query-parameters)` | `/products` |
 | GET | `get_product(id)` | `/products/:id` |
+| POST | `create_product(body:)` | `/products` |
+| GET | `get_bundle(id)` | `/products/bundles/:id` |
+| POST | `create_bundle(body:)` | `/products/bundles` |
 | GET | `get_product_groups(query-parameters)` | `/products/groups` |
 | GET | `get_product_group(id)` | `/products/groups/:id` |
+| POST | `create_product_group(body:)` | `/products/groups` |
 
 #### Accounting
 
@@ -115,8 +137,16 @@ Just like in Rails the methods follow the singular and plural expression. Method
 |------------|-------------|----------|
 | GET | `get_journal_entries(query-parameters)` | `/journal_entries` |
 | GET | `get_journal_entry(id)` | `/journal_entries/:id` |
+| POST | `create_journal_entry(body:)` | `/journal_entries` |
 | GET | `get_accounts(query-parameters)` | `/accounts` |
 | GET | `get_account(id)` | `/accounts/:id` |
+| POST | `create_account(body:)` | `/accounts` |
+
+#### Files
+
+| HTTP Method | Ruby Method | Endpoint |
+|------------|-------------|----------|
+| POST | `upload_file(file_data:, filename:, mime_type:)` | `/files` |
 
 ### Examples
 
@@ -159,10 +189,34 @@ invoices = client.get_invoices(date_from: "2025-11-01", date_to: "2025-11-30")
 invoice = client.get_invoice(123)
 ```
 
+**Creating a new contact (or supplier)**:
+
+```ruby
+body = {
+  entity_type: "MALAYSIAN_COMPANY",
+  legal_name: invoice.supplier_name,
+  types: ["supplier"]
+}
+
+contact = client.create_contact(body: body)
+```
+
+**File upload:**
+
+```ruby
+
+file_data = File.read("invoice.pdf")
+filename  = "invoice.pdf"
+mime_type = "application/pdf"
+
+client.upload_file(file_data: file_data, filename: filename, mime_type: mime_type)
+
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at <https://github.com/stopar/bukku_rails>.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
