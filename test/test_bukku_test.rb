@@ -6,7 +6,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_base_uri
-    assert_equal 'https://api.bukku.fyi', BukkuTest::BASE_URI
+    assert_equal 'https://api.staging.bukku.dev', BukkuTest::BASE_URI
   end
 
   def test_inherits_from_client
@@ -15,7 +15,7 @@ class TestBukkuTest < Minitest::Test
 
   ## SALES TESTS
   def test_get_sales_quotes
-    stub_request(:get, 'https://api.bukku.fyi/sales/quotes?date_from=2025-01-01').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/quotes?date_from=2025-01-01').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -26,7 +26,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_quote
-    stub_request(:get, 'https://api.bukku.fyi/sales/quotes/123').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/quotes/123').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -37,7 +37,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_orders
-    stub_request(:get, 'https://api.bukku.fyi/sales/orders?status=pending').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/orders?status=pending').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -48,7 +48,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_order
-    stub_request(:get, 'https://api.bukku.fyi/sales/orders/456').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/orders/456').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -59,7 +59,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_delivery_orders
-    stub_request(:get, 'https://api.bukku.fyi/sales/delivery_orders').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/delivery_orders').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -70,7 +70,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_delivery_order
-    stub_request(:get, 'https://api.bukku.fyi/sales/delivery_orders/789').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/delivery_orders/789').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -81,7 +81,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_invoices
-    stub_request(:get, 'https://api.bukku.fyi/sales/invoices?date_from=2025-01-01&date_to=2025-01-31').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/invoices?date_from=2025-01-01&date_to=2025-01-31').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -92,7 +92,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_invoice
-    stub_request(:get, 'https://api.bukku.fyi/sales/invoices/999').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/invoices/999').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -103,7 +103,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_credit_notes
-    stub_request(:get, 'https://api.bukku.fyi/sales/credit_notes').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/credit_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -114,7 +114,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_credit_note
-    stub_request(:get, 'https://api.bukku.fyi/sales/credit_notes/111').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/credit_notes/111').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -125,7 +125,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_payments
-    stub_request(:get, 'https://api.bukku.fyi/sales/payments').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/payments').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -136,7 +136,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_payment
-    stub_request(:get, 'https://api.bukku.fyi/sales/payments/222').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/payments/222').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -147,7 +147,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_refunds
-    stub_request(:get, 'https://api.bukku.fyi/sales/refunds').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/refunds').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -158,7 +158,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_sales_refund
-    stub_request(:get, 'https://api.bukku.fyi/sales/refunds/333').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/sales/refunds/333').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -170,7 +170,7 @@ class TestBukkuTest < Minitest::Test
 
   ## PURCHASE TESTS
   def test_get_purchase_orders
-    stub_request(:get, 'https://api.bukku.fyi/purchases/orders?status=approved').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/orders?status=approved').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -181,7 +181,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchase_order
-    stub_request(:get, 'https://api.bukku.fyi/purchases/orders/444').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/orders/444').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -192,7 +192,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_received_notes
-    stub_request(:get, 'https://api.bukku.fyi/purchases/goods_received_notes').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/goods_received_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -203,7 +203,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_received_note
-    stub_request(:get, 'https://api.bukku.fyi/purchases/goods_received_notes/555').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/goods_received_notes/555').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -214,7 +214,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_bills
-    stub_request(:get, 'https://api.bukku.fyi/purchases/bills').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/bills').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -225,7 +225,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_bill
-    stub_request(:get, 'https://api.bukku.fyi/purchases/bills/666').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/bills/666').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -236,7 +236,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_credit_notes
-    stub_request(:get, 'https://api.bukku.fyi/purchases/credit_notes').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/credit_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -247,7 +247,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_credit_note
-    stub_request(:get, 'https://api.bukku.fyi/purchases/credit_notes/777').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/credit_notes/777').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -258,7 +258,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_payments
-    stub_request(:get, 'https://api.bukku.fyi/purchases/payments').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/payments').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -269,7 +269,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_payment
-    stub_request(:get, 'https://api.bukku.fyi/purchases/payments/888').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/payments/888').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -280,7 +280,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_refunds
-    stub_request(:get, 'https://api.bukku.fyi/purchases/refunds').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/refunds').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -291,7 +291,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_purchases_refund
-    stub_request(:get, 'https://api.bukku.fyi/purchases/refunds/991').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/purchases/refunds/991').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -303,7 +303,7 @@ class TestBukkuTest < Minitest::Test
 
   ## BANKING TESTS
   def test_get_banking_incomes
-    stub_request(:get, 'https://api.bukku.fyi/banking/incomes?date_from=2025-01-01').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/incomes?date_from=2025-01-01').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -314,7 +314,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_banking_income
-    stub_request(:get, 'https://api.bukku.fyi/banking/incomes/101').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/incomes/101').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -325,7 +325,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_banking_expenses
-    stub_request(:get, 'https://api.bukku.fyi/banking/expenses').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/expenses').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -336,7 +336,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_banking_expense
-    stub_request(:get, 'https://api.bukku.fyi/banking/expenses/202').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/expenses/202').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -347,7 +347,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_transfers
-    stub_request(:get, 'https://api.bukku.fyi/banking/transfers').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/transfers').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -358,7 +358,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_transfer
-    stub_request(:get, 'https://api.bukku.fyi/banking/transfers/303').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/banking/transfers/303').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -370,7 +370,7 @@ class TestBukkuTest < Minitest::Test
 
   ## CONTACT TESTS
   def test_get_contacts
-    stub_request(:get, 'https://api.bukku.fyi/contacts?type=customer').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/contacts?type=customer').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -381,7 +381,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_contact
-    stub_request(:get, 'https://api.bukku.fyi/contacts/404').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/contacts/404').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -392,7 +392,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_contact_groups
-    stub_request(:get, 'https://api.bukku.fyi/contacts/groups').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/contacts/groups').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -403,7 +403,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_contact_group
-    stub_request(:get, 'https://api.bukku.fyi/contacts/groups/505').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/contacts/groups/505').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -415,7 +415,7 @@ class TestBukkuTest < Minitest::Test
 
   ## PRODUCT TESTS
   def test_get_products
-    stub_request(:get, 'https://api.bukku.fyi/products?category=electronics').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/products?category=electronics').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -426,7 +426,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_product
-    stub_request(:get, 'https://api.bukku.fyi/products/606').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/products/606').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -437,7 +437,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_product_groups
-    stub_request(:get, 'https://api.bukku.fyi/products/groups').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/products/groups').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -448,7 +448,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_get_product_group
-    stub_request(:get, 'https://api.bukku.fyi/products/groups/707').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/products/groups/707').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -460,7 +460,7 @@ class TestBukkuTest < Minitest::Test
 
   ## SALES CREATE TESTS
   def test_create_quote
-    stub_request(:post, 'https://api.bukku.fyi/sales/quotes').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/quotes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -472,7 +472,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_sales_order
-    stub_request(:post, 'https://api.bukku.fyi/sales/orders').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/orders').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -484,7 +484,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_delivery_order
-    stub_request(:post, 'https://api.bukku.fyi/sales/delivery_orders').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/delivery_orders').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -496,7 +496,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_invoice
-    stub_request(:post, 'https://api.bukku.fyi/sales/invoices').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/invoices').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -508,7 +508,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_credit_note
-    stub_request(:post, 'https://api.bukku.fyi/sales/credit_notes').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/credit_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -520,7 +520,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_payment
-    stub_request(:post, 'https://api.bukku.fyi/sales/payments').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/payments').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -532,7 +532,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_refund
-    stub_request(:post, 'https://api.bukku.fyi/sales/refunds').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/sales/refunds').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -545,7 +545,7 @@ class TestBukkuTest < Minitest::Test
 
   ## PURCHASE CREATE TESTS
   def test_create_purchase_order
-    stub_request(:post, 'https://api.bukku.fyi/purchases/orders').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/orders').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -557,7 +557,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_received_note
-    stub_request(:post, 'https://api.bukku.fyi/purchases/goods_received_notes').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/goods_received_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -569,7 +569,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_bill
-    stub_request(:post, 'https://api.bukku.fyi/purchases/bills').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/bills').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -581,7 +581,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_purchase_credit_note
-    stub_request(:post, 'https://api.bukku.fyi/purchases/credit_note').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/credit_note').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -593,7 +593,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_purchases_payment
-    stub_request(:post, 'https://api.bukku.fyi/purchases/payments').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/payments').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -605,7 +605,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_purchases_refund
-    stub_request(:post, 'https://api.bukku.fyi/purchases/refunds').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/refunds').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -618,7 +618,7 @@ class TestBukkuTest < Minitest::Test
 
   ## BANKING CREATE TESTS
   def test_create_banking_income
-    stub_request(:post, 'https://api.bukku.fyi/banking/incomes').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/banking/incomes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -630,7 +630,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_expense
-    stub_request(:post, 'https://api.bukku.fyi/banking/expenses').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/banking/expenses').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -642,7 +642,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_transfer
-    stub_request(:post, 'https://api.bukku.fyi/banking/transfer').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/banking/transfer').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -655,7 +655,7 @@ class TestBukkuTest < Minitest::Test
 
   ## CONTACT CREATE TESTS
   def test_create_contact
-    stub_request(:post, 'https://api.bukku.fyi/contacts').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/contacts').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -667,7 +667,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_group
-    stub_request(:post, 'https://api.bukku.fyi/contacts/groups').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/contacts/groups').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -680,7 +680,7 @@ class TestBukkuTest < Minitest::Test
 
   ## PRODUCT CREATE TESTS
   def test_get_bundle
-    stub_request(:get, 'https://api.bukku.fyi/products/bundles/808').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/products/bundles/808').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -691,7 +691,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_product
-    stub_request(:post, 'https://api.bukku.fyi/products').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/products').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -703,7 +703,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_bundle
-    stub_request(:post, 'https://api.bukku.fyi/products/bundles').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/products/bundles').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -715,7 +715,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_product_group
-    stub_request(:post, 'https://api.bukku.fyi/products/groups').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/products/groups').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -728,7 +728,7 @@ class TestBukkuTest < Minitest::Test
 
   ## ACCOUNTING TESTS
   def test_journal_entries
-    stub_request(:get, 'https://api.bukku.fyi/journal_entries?date_from=2025-01-01').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/journal_entries?date_from=2025-01-01').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -739,7 +739,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_journal_entry
-    stub_request(:get, 'https://api.bukku.fyi/journal_entries/808').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/journal_entries/808').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -750,7 +750,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_accounts
-    stub_request(:get, 'https://api.bukku.fyi/accounts?type=expenses').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/accounts?type=expenses').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -761,7 +761,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_account
-    stub_request(:get, 'https://api.bukku.fyi/accounts/909').with(
+    stub_request(:get, 'https://api.staging.bukku.dev/accounts/909').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -772,7 +772,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_journal_entry
-    stub_request(:post, 'https://api.bukku.fyi/journal_entries').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/journal_entries').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -784,7 +784,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_account
-    stub_request(:post, 'https://api.bukku.fyi/accounts').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/accounts').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -797,7 +797,7 @@ class TestBukkuTest < Minitest::Test
 
   ## FILE TESTS
   def test_upload_file
-    stub_request(:post, 'https://api.bukku.fyi/files').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/files').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',

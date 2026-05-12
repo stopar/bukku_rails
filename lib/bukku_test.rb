@@ -4,7 +4,7 @@ class BukkuTest < Client
   # respond = access.<method>
 
   # Testing URL
-  BASE_URI = 'https://api.bukku.fyi'
+  BASE_URI = 'https://api.staging.bukku.dev'
 
   ## SALES
   # Quotation

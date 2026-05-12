@@ -49,7 +49,7 @@ class Client
     http.use_ssl = uri.instance_of?(URI::HTTPS)
 
     # Add the 2 lines below because development keeps on failing SSL CRL checks
-    # Check this article for explanation: 
+    # Check this article for explanation:
     # https://dev.to/madhuhari188/how-we-solved-unable-to-get-certificate-crl-in-rails-a-debugging-story-2pna
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
     http.verify_callback = ->(_preverify_ok, _store_ctx) { true }
@@ -58,7 +58,7 @@ class Client
   end
 
   def make_request(klass, path, query: {}, body: {})
-    # Uncomment below for debuging purpose to see the payload that was sent.
+    # Uncomment below for debuging purpose to see payload that was sent.
     # build_http(uri).set_debug_output($stdout)
 
     uri = URI("#{base_uri}#{path}")
@@ -90,5 +90,6 @@ class Client
       raise Error, "#{response.code}: #{response.body}"
     end
   end
+
   class Error < StandardError; end
 end
