@@ -148,7 +148,7 @@ class Bukku < Client
   end
 
   def create_purchase_credit_note(body:)
-    post '/purchases/credit_note', body: body
+    post '/purchases/credit_notes', body: body
   end
 
   # Payment
@@ -214,7 +214,7 @@ class Bukku < Client
   end
 
   def create_transfer(body:)
-    post '/banking/transfer', body: body
+    post '/banking/transfers', body: body
   end
 
   ## CONTACT

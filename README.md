@@ -87,7 +87,7 @@ Just like in Rails the methods follow the singular and plural expression. Method
 | POST | `create_bill(body:)` | `/purchases/bills` |
 | GET | `get_purchases_credit_notes(query-parameters)` | `/purchases/credit_notes` |
 | GET | `get_purchases_credit_note(id)` | `/purchases/credit_notes/:id` |
-| POST | `create_purchase_credit_note(body:)` | `/purchases/credit_note` |
+| POST | `create_purchase_credit_note(body:)` | `/purchases/credit_notes` |
 | GET | `get_purchases_payments(query-parameters)` | `/purchases/payments` |
 | GET | `get_purchases_payment(id)` | `/purchases/payments/:id` |
 | POST | `create_purchases_payment(body:)` | `/purchases/payments` |
@@ -107,7 +107,7 @@ Just like in Rails the methods follow the singular and plural expression. Method
 | POST | `create_expense(body:)` | `/banking/expenses` |
 | GET | `get_transfers(query-parameters)` | `/banking/transfers` |
 | GET | `get_transfer(id)` | `/banking/transfers/:id` |
-| POST | `create_transfer(body:)` | `/banking/transfer` |
+| POST | `create_transfer(body:)` | `/banking/transfers` |
 
 #### Contacts
 
@@ -154,7 +154,7 @@ Just like in Rails the methods follow the singular and plural expression. Method
 
 To use the gem you will need to initialize a client first. Either choose a Bukku's Staging or Production server to test your app.
 
-For Staging at <https://api.bukku.fyi>
+For Staging at <https://api.staging.bukku.dev>
 
 ```ruby
 client = BukkuTest.new(

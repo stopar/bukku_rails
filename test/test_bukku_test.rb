@@ -581,7 +581,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_purchase_credit_note
-    stub_request(:post, 'https://api.staging.bukku.dev/purchases/credit_note').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/purchases/credit_notes').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
@@ -642,7 +642,7 @@ class TestBukkuTest < Minitest::Test
   end
 
   def test_create_transfer
-    stub_request(:post, 'https://api.staging.bukku.dev/banking/transfer').with(
+    stub_request(:post, 'https://api.staging.bukku.dev/banking/transfers').with(
       headers: {
         'Authorization' => 'Bearer abc123',
         'Company-Subdomain' => 'test',
