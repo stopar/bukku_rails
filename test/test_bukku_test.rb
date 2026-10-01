@@ -795,6 +795,64 @@ class TestBukkuTest < Minitest::Test
     @bukku_test.create_account(body: { name: 'test' })
   end
 
+  ## CONTROL PANEL TESTS
+  def test_get_tags
+    stub_request(:get, 'https://api.staging.bukku.dev/tags').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      }
+    )
+    @bukku_test.get_tags
+  end
+
+  def test_get_tag
+    stub_request(:get, 'https://api.staging.bukku.dev/tags/42').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      }
+    )
+    @bukku_test.get_tag(42)
+  end
+
+  def test_create_tag
+    stub_request(:post, 'https://api.staging.bukku.dev/tags').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"special price","tag_group_id":1}'
+    )
+    @bukku_test.create_tag(body: { name: 'special price', tag_group_id: 1 })
+  end
+
+  def test_get_tag_groups
+    stub_request(:get, 'https://api.staging.bukku.dev/tags/groups?include_archived=true').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      }
+    )
+    @bukku_test.get_tag_groups(include_archived: true)
+  end
+
+  def test_create_tag_group
+    stub_request(:post, 'https://api.staging.bukku.dev/tags/groups').with(
+      headers: {
+        'Authorization' => 'Bearer abc123',
+        'Company-Subdomain' => 'test',
+        'Accept' => 'application/json'
+      },
+      body: '{"name":"Branch"}'
+    )
+    @bukku_test.create_tag_group(body: { name: 'Branch' })
+  end
+
   ## FILE TESTS
   def test_upload_file
     stub_request(:post, 'https://api.staging.bukku.dev/files').with(

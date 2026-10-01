@@ -144,6 +144,16 @@ Just like in Rails the methods follow the singular and plural expression. Method
 | GET | `get_account(id)` | `/accounts/:id` |
 | POST | `create_account(body:)` | `/accounts` |
 
+#### Control Panel
+
+| HTTP Method | Ruby Method | Endpoint |
+|------------|-------------|----------|
+| GET | `get_tags(query-parameters)` | `/tags` |
+| GET | `get_tag(id)` | `/tags/:id` |
+| POST | `create_tag(body:)` | `/tags` |
+| GET | `get_tag_groups(query-parameters)` | `/tags/groups` |
+| POST | `create_tag_group(body:)` | `/tags/groups` |
+
 #### Files
 
 | HTTP Method | Ruby Method | Endpoint |
@@ -201,6 +211,17 @@ body = {
 }
 
 contact = client.create_contact(body: body)
+```
+
+**Creating a tag:**
+Every tag belongs to a tag group, so create (or look up) the group first.
+
+```ruby
+group = client.create_tag_group(body: { name: "Branch" })
+tag   = client.create_tag(body: { name: "Kuala Lumpur", tag_group_id: group["tag_group"]["id"] })
+
+# Existing groups, each with its tags under "children"
+client.get_tag_groups
 ```
 
 **File upload:**

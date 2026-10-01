@@ -307,6 +307,29 @@ class Bukku < Client
     post '/accounts', body: body
   end
 
+  ## CONTROL PANEL
+  # Tags
+  def get_tags(**kwargs)
+    get '/tags', query: kwargs
+  end
+
+  def get_tag(id)
+    get "/tags/#{id}"
+  end
+
+  def create_tag(body:)
+    post '/tags', body: body
+  end
+
+  # Tag Groups
+  def get_tag_groups(**kwargs)
+    get '/tags/groups', query: kwargs
+  end
+
+  def create_tag_group(body:)
+    post '/tags/groups', body: body
+  end
+
   # Files
   def upload_file(file_data:, filename:, mime_type:)
     upload '/files', file_data: file_data, filename: filename, mime_type: mime_type
